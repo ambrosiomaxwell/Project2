@@ -1,7 +1,8 @@
 module.exports = (sequelize, DataTypes) => {
     const musicSelection = sequelize.define('musicSelection', {
-      text: DataTypes.STRING,
-      complete: DataTypes.BOOLEAN,
+      name: DataTypes.STRING,
+      email: DataTypes.STRING,
+      // considering adding complete datatypes.BOOLEAN to see if music selection is complete.
     });
     return musicSelection;
 };
