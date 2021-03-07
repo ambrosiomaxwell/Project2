@@ -12,4 +12,8 @@ app.use(express.static('public'));
 
 require('./routes/api-routes.js')(app);
 
-app.listen(PORT, () => console.log(`Listening on PORT ${PORT}`));
+//Updating port for sequelize
+
+db.sequelize.sync().then(() => {
+    app.listen(PORT, () => console.log(`Listening on PORT ${PORT}`));
+});
