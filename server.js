@@ -1,4 +1,5 @@
 const express = require('express');
+const path = require('path');
 const exphbs = require('express-handlebars');
 const { studyrooms } = require('./studyrooms');
 
@@ -18,20 +19,20 @@ app.get('/', (req,res) => {
 });
 
 app.get('/index', (req, res) => {
-    res.sendFile(path.join(__dirname, '../public/index.html'));
+    res.sendFile(path.join(__dirname, './public/index.html'));
 });
 
 
 
-// app.get('/studyrooms/:name',(req, res) => {
-//     for (let i=0; i < studyrooms.length; i++){
-//         if (studyrooms[i].name === req.params.name){
-//             return res.render('studyroom', studyrooms[i]);
-//         }
-//     }
-// })
+app.get('/studyrooms/:name',(req, res) => {
+    for (let i=0; i < studyrooms.length; i++){
+        if (studyrooms[i].name === req.params.name){
+            return res.render('studyroom', studyrooms[i]);
+        }
+    }
+})
 
-// app.get('/studyrooms', (req, res) => res.render('sdy', {sdy: studyrooms}));
+app.get('/studyrooms', (req, res) => res.render('sdy', {sdy: studyrooms}));
 
 app.listen(PORT, () => {
     console.log(`Server listening on: http://localhost: ${PORT}`);
