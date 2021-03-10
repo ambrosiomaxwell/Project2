@@ -3,7 +3,7 @@ const path = require('path');
 const exphbs = require('express-handlebars');
 const { studyrooms } = require('./studyrooms');
 
-//connecting to express
+// Express initiation function
 const app = express();
 
 const PORT = process.env.PORT || 8080;
