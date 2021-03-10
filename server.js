@@ -3,6 +3,8 @@ const path = require('path');
 const exphbs = require('express-handlebars');
 const { studyrooms } = require('./studyrooms');
 
+//tests
+
 // Express initiation function
 const app = express();
 
