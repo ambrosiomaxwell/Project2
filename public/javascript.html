@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="UTF-8">
+        <title>Javascript Page</title>
+        
+        <!--bootstrap--->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+        <!---Google Fonts-->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1&display=swap" rel="stylesheet">
+        
+        <!---Handlebars-->
+        <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+    </head>
+    <body>
+        <div class="jumbotron">
+            <h1 class="text-center">Javascript Study Area!</h1>
+        </div>
+        
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8 col-sm-offset-2">
+                    <p class="cool-font">Name</p>
+                    <input class="form-control" type="text" id="name" placeholder="Enter your name">
+                    <br>
+                    <p class="cool-font">Email</p>
+                    <input class="form-control" type="text" id="emailarea" placeholder="Enter your email">
+                    <button id="name-submit" class="btn-btn-lg pull-right">Submit</button>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-sm-8 col-sm-offset-2">
+                    <h2>Users</h2>
+                    <hr>
+                    <div id="user-area"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!---Future spot for spotify-->
+
+            <h1>Logged in as </h1>
+            <img id="avatar" width="200" src="" />
+            <dl>
+             <dt>Display name</dt><dd></dd>
+             <dt>Username</dt><dd></dd>
+             <dt>Email</dt><dd></dd>
+             <dt>Spotify URI</dt><dd><a href=""></a></dd>
+             <dt>Link</dt><dd><a href=""></a></dd>
+             <dt>Profile Image</dt><dd></dd>
+            </dl>
+            <p><a href="/">Log in again</a></p>
+
+        </div>
+
+        <script type="text/javascript" src="js/spotifyMusic.js"></script>
+    </body>
+
+
+</html>

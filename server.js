@@ -25,6 +25,9 @@ app.get('/index', (req, res) => {
     res.sendFile(path.join(__dirname, './public/index.html'));
 });
 
+app.get('/javascript', (req, res) => {
+    res.sendFile(path.join(__dirname, './public/javascript.html'));
+});
 
 
 app.get('/studyrooms/:name',(req, res) => {
