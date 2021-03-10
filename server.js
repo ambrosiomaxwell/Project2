@@ -1,13 +1,17 @@
 const express = require('express');
-
+const http = require('http')
 const app = express();
 const PORT = process.env.PORT || 8080;
 
+const server = http.createServer(app);
+
 app.use(express.urlencoded({ extended: true }));
+
 app.use(express.json());
 
 app.use(express.static('public'));
 
-require('./routes/api-routes.js')(app);
+const routes = require('./routes/api-routes.js');
+app.use(routes)
 
-app.listen(PORT, () => console.log(`Listening on PORT ${PORT}`));
+server.listen(PORT, () => console.log(`Listening on PORT ${PORT}`));

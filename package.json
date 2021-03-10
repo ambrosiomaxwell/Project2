@@ -1,0 +1,25 @@
+{
+  "name": "project2",
+  "version": "1.0.0",
+  "description": "Project Name:",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ambrosiomaxwell/Project2.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ambrosiomaxwell/Project2/issues"
+  },
+  "homepage": "https://github.com/ambrosiomaxwell/Project2#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "sequelize": "^6.5.0",
+    "socket.io": "^3.1.2"
+  }
+}
