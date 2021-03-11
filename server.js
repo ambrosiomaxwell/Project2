@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const exphbs = require('express-handlebars');
 const { studyrooms } = require('./studyrooms');
+//const session = require('express-session');
 
 //tests
 
@@ -13,11 +14,16 @@ const PORT = process.env.PORT || 8080;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+// app.use(session({
+//     'secret':'1234'
+// }))
+
 
 app.engine('handlebars', exphbs({ defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 
-app.get('/', (req,res) => {
+app.get('/', (req,res,) => {
+    //req.session
     res.send("Welcome to the study group page!");
 });
 
