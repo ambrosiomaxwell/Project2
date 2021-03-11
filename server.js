@@ -8,8 +8,9 @@ const { studyrooms } = require('./studyrooms');
 
 // Express initiation function
 const app = express();
-
 const PORT = process.env.PORT || 8080;
+
+const db = require('./models');
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -46,6 +47,12 @@ app.get('/studyrooms/:name',(req, res) => {
 
 app.get('/studyrooms', (req, res) => res.render('sdy', {sdy: studyrooms}));
 
-app.listen(PORT, () => {
-    console.log(`Server listening on: http://localhost: ${PORT}`);
+//Syncing sequelize models and then starting our Express app
+
+db.sequelize.sync().then(() => {
+    app.listen(PORT, () => console.log(`App listening on PORT ${PORT}`));
 });
+
+// app.listen(PORT, () => {
+//     console.log(`Server listening on: http://localhost: ${PORT}`);
+// });
