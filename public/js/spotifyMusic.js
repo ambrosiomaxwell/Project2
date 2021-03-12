@@ -1,5 +1,3 @@
-const { response } = require("express");
-
 const submitNameBtn = document.getElementById('name-submit');
 submitNameBtn.addEventListener('click', (e) => {
     e.preventDefault();
@@ -49,7 +47,7 @@ fetch('/api/all', {
 })
 .then((response)=> response.json())
 .then((data) => {
-    console.log('Successful GET all chirps:', data);
+    console.log('Successful GET all Names:', data);
     data.map(({ name, email}) => {
         const row = document.createElement('div');
         const userArea = document.getElementById('user-area');

@@ -1,8 +1,6 @@
 const express = require('express');
 const path = require('path');
 const exphbs = require('express-handlebars');
-const { studyrooms } = require('./studyrooms');
-//const session = require('express-session');
 
 //tests
 
@@ -15,39 +13,11 @@ const db = require('./models');
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// app.use(session({
-//     'secret':'1234'
-// }))
-
 
 app.engine('handlebars', exphbs({ defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 
-//original server screen
-
-// app.get('/', (req,res,) => {
-//     //req.session
-//     res.send("Welcome to the study group page!");
-// });
-
-app.get('/index', (req, res) => {
-    res.sendFile(path.join(__dirname, './public/index.html'));
-});
-
-app.get('/javascript', (req, res) => {
-    res.sendFile(path.join(__dirname, './public/javascript.html'));
-});
-
-
-app.get('/studyrooms/:name',(req, res) => {
-    for (let i=0; i < studyrooms.length; i++){
-        if (studyrooms[i].name === req.params.name){
-            return res.render('studyroom', studyrooms[i]);
-        }
-    }
-})
-
-app.get('/studyrooms', (req, res) => res.render('sdy', {sdy: studyrooms}));
+app.use(express.static(path.join(__dirname, '/public')));
 
 //new javascriptroom
 
@@ -57,6 +27,26 @@ app.get('/javascriptroom',(req,res) => res.render('javascript', {layouts: 'main'
 
 app.get('/', (req, res) => res.render('index', {layouts: 'main'}));
 
+
+
+//original server screen
+
+// app.get('/', (req,res,) => {
+//     //req.session
+//     res.send("Welcome to the study group page!");
+// });
+
+//removing html route for handlebars
+
+// app.get('/index', (req, res) => {
+//     res.sendFile(path.join(__dirname, './public/index.html'));
+// });
+
+// //removing route for handlebars
+
+app.get('/javascript', (req, res) => {
+    res.sendFile(path.join(__dirname, './public/javascript.html'));
+});
 
 
 //Syncing sequelize models and then starting our Express app
