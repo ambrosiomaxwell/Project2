@@ -23,10 +23,12 @@ app.use(express.json());
 app.engine('handlebars', exphbs({ defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 
-app.get('/', (req,res,) => {
-    //req.session
-    res.send("Welcome to the study group page!");
-});
+//original server screen
+
+// app.get('/', (req,res,) => {
+//     //req.session
+//     res.send("Welcome to the study group page!");
+// });
 
 app.get('/index', (req, res) => {
     res.sendFile(path.join(__dirname, './public/index.html'));
@@ -46,6 +48,16 @@ app.get('/studyrooms/:name',(req, res) => {
 })
 
 app.get('/studyrooms', (req, res) => res.render('sdy', {sdy: studyrooms}));
+
+//new javascriptroom
+
+app.get('/javascriptroom',(req,res) => res.render('javascript', {layouts: 'main'}));
+
+//new index room
+
+app.get('/', (req, res) => res.render('index', {layouts: 'main'}));
+
+
 
 //Syncing sequelize models and then starting our Express app
 

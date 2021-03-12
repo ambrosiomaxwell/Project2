@@ -1,14 +1,14 @@
 module.exports = (sequelize, DataTypes) => {
     const Names = sequelize.define('Names', {
-        text: {
-            name: DataTypes.STRING,
+        name: {
+            type: DataTypes.STRING,
             allowNull: false,
             validate:{
                 len: [1,140],
             },
         },
-        text: {
-            email: DataTypes.STRING,
+        email: {
+            type: DataTypes.STRING,
             allowNull: false,
             validate: {
                 len: [1,140],
