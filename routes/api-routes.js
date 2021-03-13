@@ -2,13 +2,13 @@ const db = require('../models');
 
 //api routes
 module.exports = (app) => {
-  app.get('/api/names', (req, res) => {
-      db.Names.findAll({}).then((Names) => res.json(Names));  
+  app.get('/api/all', (req, res) => {
+      db.Names.findAll({}).then((dbNames) => res.json(dbNames));  
   });
 
   app.post('api/names', (req, res) => {
     db.Names.create({
-        name: req.body.name,
+        text: req.body.text,
         email: req.body.email,
     })
     .then((dbName) => res.json(dbName))

@@ -61,6 +61,8 @@ fetch('/api/all', {
 
         row.appendChild(userName);
         row.appendChild(userEmail);
+
+        userArea.prepend(row);
     });
 })
 .catch((err) => console.error(err));
