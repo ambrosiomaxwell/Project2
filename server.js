@@ -28,6 +28,9 @@ app.get('/javascriptroom',(req,res) => res.render('javascript', {layouts: 'main'
 app.get('/', (req, res) => res.render('index', {layouts: 'main'}));
 
 
+app.get('/login', (req, res) => res.render('login', {layouts: 'main'}));
+
+
 // passport authentication route
 
 // app.post('/login', 

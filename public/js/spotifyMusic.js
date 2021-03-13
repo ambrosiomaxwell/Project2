@@ -1,6 +1,7 @@
 const submitNameBtn = document.getElementById('name-submit');
 submitNameBtn.addEventListener('click', (e) => {
     e.preventDefault();
+    console.log(e);
 
     //Make a new name and email object
     const newUser = {

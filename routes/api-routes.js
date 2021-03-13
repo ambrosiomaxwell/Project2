@@ -6,12 +6,13 @@ module.exports = (app) => {
       db.Names.findAll({}).then((dbNames) => res.json(dbNames));  
   });
 
-  app.post('api/names', (req, res) => {
+  app.post('/api/new', (req, res) => {
+    console.log(req.body);
     db.Names.create({
-        text: req.body.text,
+        name: req.body.name,
         email: req.body.email,
     })
-    .then((dbName) => res.json(dbName))
+    .then((dbNames) => res.json(dbNames))
     .catch((err) => res.json(err)); 
   });
 
