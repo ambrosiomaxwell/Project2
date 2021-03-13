@@ -1,9 +1,13 @@
 body{
-    background-color: rgb(249, 251, 252);
+    background-color: whitesmoke;
+    font-family: 'Baloo 2', cursive;
+    
 }
-  
+
 .studyroomheading{
     text-align: center;
+    font-family: 'Baloo 2', cursive;
+    background-color: lightsalmon;
 }
   
 .studyroomquestion{
@@ -13,4 +17,8 @@ body{
 .subjectbuttons{
     text-align: center;
     padding: 20px;
+}
+
+.selector-for-some-widget {
+    box-sizing: content-box;
 }

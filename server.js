@@ -27,7 +27,7 @@ app.get('/', (req, res) => res.render('index', {layouts: 'main'}));
 
 app.get('/login', (req, res) => res.render('login', {layouts: 'main'}));
 
-require('./routes/api-routes.js')(app);
+// require('./routes/api-routes.js')(app);
 
 //original server screen
 

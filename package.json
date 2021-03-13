@@ -1,29 +1,35 @@
 {
-    "name": "project2",
-    "version": "1.0.0",
-    "description": "## Description Our app is changing the tune to how you study. Students can select the subject they want to study, create a room, and invitie their peers. While in the study room, you can select different songs you want to listen to together or let us develop your studying playlist for you!",
-    "main": "server.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "node server.js"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/ambrosiomaxwell/Project2.git"
-    },
-    "author": "",
-    "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/ambrosiomaxwell/Project2/issues"
-    },
-    "homepage": "https://github.com/ambrosiomaxwell/Project2#readme",
-    "dependencies": {
-        "express": "^4.17.1",
-        "express-handlebars": "^5.2.1",
-        "express-session": "^1.17.1",
-        "mysql": "^2.18.1",
-        "mysql2": "^2.2.5",
-        "passport-http-bearer": "^1.0.1",
-        "sequelize": "^6.5.0"
-    }
+  "name": "project2",
+  "version": "1.0.0",
+  "description": "## Description Our app is changing the tune to how you study. Students can select the subject they want to study, create a room, and invitie their peers. While in the study room, you can select different songs you want to listen to together or let us develop your studying playlist for you!",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ambrosiomaxwell/Project2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ambrosiomaxwell/Project2/issues"
+  },
+  "homepage": "https://github.com/ambrosiomaxwell/Project2#readme",
+  "dependencies": {
+    "crypto": "^1.0.1",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.2.1",
+    "express-mysql-session": "^2.1.5",
+    "express-session": "^1.17.1",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.2.5",
+    "passport": "^0.4.1",
+    "passport-http-bearer": "^1.0.1",
+    "passport-local": "^1.0.0",
+    "sequelize": "^6.5.0",
+    "sequelize-cli": "^6.2.0"
+  },
+  "keywords": []
 }

@@ -1,57 +1,64 @@
-const express = require('express');
-const path = require('path');
-const bodyParser = require('body-parser');
-const session = require('express-session');
-const cors = require('cors');
-const mongoose = require('mongoose');
-const errorHandler = require('errorhandler');
+var crypto = require('crypto');
+var mysql = require('mysql');
+var session = require("express-session");
+var MySQLStore = require('express-mysql-session')(session);
+var passport = require('passport')
+  , LocalStrategy = require('passport-local').Strategy;
 
-mongoose.promise = global.Promise;
+// const express = require('express');
+// const path = require('path');
+// const bodyParser = require('body-parser');
+// const session = require('express-session');
+// const cors = require('cors');
+// // const mongoose = require('mongoose');
+// const errorHandler = require('errorhandler');
 
-const isProduction = process.env.NODE_ENV === 'production';
+// // mongoose.promise = global.Promise;
 
-const app = express();
+// const isProduction = process.env.NODE_ENV === 'production';
 
-app.use(cors());
-app.use(require('morgan')('dev'));
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
-app.use(express.static(path.join(__dirname, 'public')));
-app.use(session({ secret: 'passport-tutorial', cookie: { maxAge: 60000 }, resave: false, saveUninitialized: false }));
+// const app = express();
 
-if(!isProduction) {
-  app.use(errorHandler());
-}
+// app.use(cors());
+// app.use(require('morgan')('dev'));
+// app.use(bodyParser.urlencoded({ extended: false }));
+// app.use(bodyParser.json());
+// app.use(express.static(path.join(__dirname, 'public')));
+// app.use(session({ secret: 'passport-tutorial', cookie: { maxAge: 60000 }, resave: false, saveUninitialized: false }));
 
-mongoose.connect('mongodb://localhost/passport-tutorial');
-mongoose.set('debug', true);
+// if(!isProduction) {
+//   app.use(errorHandler());
+// }
 
-require('./models/Users');
-require('./config/passport');
-app.use(require('./routes'));
+// // mongoose.connect('mongodb://localhost/passport-tutorial');
+// // mongoose.set('debug', true);
 
-if(!isProduction) {
-  app.use((err, req, res) => {
-    res.status(err.status || 500);
+// require('./models/Users');
+// require('./config/passport');
+// app.use(require('./routes'));
 
-    res.json({
-      errors: {
-        message: err.message,
-        error: err,
-      },
-    });
-  });
-}
+// if(!isProduction) {
+//   app.use((err, req, res) => {
+//     res.status(err.status || 500);
 
-app.use((err, req, res) => {
-  res.status(err.status || 500);
+//     res.json({
+//       errors: {
+//         message: err.message,
+//         error: err,
+//       },
+//     });
+//   });
+// }
 
-  res.json({
-    errors: {
-      message: err.message,
-      error: {},
-    },
-  });
-});
+// app.use((err, req, res) => {
+//   res.status(err.status || 500);
 
-app.listen(8000, () => console.log('Server running on http://localhost:8000/'));
+//   res.json({
+//     errors: {
+//       message: err.message,
+//       error: {},
+//     },
+//   });
+// });
+
+// app.listen(8000, () => console.log('Server running on http://localhost:8000/'));
