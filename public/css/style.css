@@ -1,0 +1,16 @@
+body{
+    background-color: rgb(249, 251, 252);
+}
+  
+.studyroomheading{
+    text-align: center;
+}
+  
+.studyroomquestion{
+    text-align: center;
+}
+  
+.subjectbuttons{
+    text-align: center;
+    padding: 20px;
+}
