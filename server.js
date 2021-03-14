@@ -1,12 +1,12 @@
 const express = require('express');
 // const path = require('path');
-const exphbs = require('express-handlebars');
 const app = express();
 const passport = require('passport')
 const session = require('express-session')
 const bodyParser = require('body-parser')
 const env = require('dotenv').config();
-var authRoute = require('./app/routes/auth.js')(app,passport);
+const exphbs = require('express-handlebars');
+var authRoute = require('./app/routes/auth')(app,passport);
 
 const PORT = process.env.PORT || 8080;
 
