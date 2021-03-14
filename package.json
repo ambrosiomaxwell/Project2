@@ -18,7 +18,10 @@
   },
   "homepage": "https://github.com/ambrosiomaxwell/Project2#readme",
   "dependencies": {
+    "bcrypt-nodejs": "^0.0.3",
+    "body-parser": "^1.19.0",
     "crypto": "^1.0.1",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-handlebars": "^5.2.1",
     "express-mysql-session": "^2.1.5",
