@@ -84,7 +84,7 @@ app.set('view engine', 'handlebars');
 
 app.use(express.static('public'));
 
-const models = require("./app/models");
+// const models = require("./app/models");
 
 
 //Handlebar routes
