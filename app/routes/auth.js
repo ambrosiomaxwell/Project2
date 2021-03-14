@@ -1,4 +1,4 @@
-var authController = require('../controllers/authcontroller.js');
+var authController = require('../controllers/authcontroller');
  
 module.exports = function(app, passport) {
  
@@ -14,19 +14,19 @@ module.exports = function(app, passport) {
     }
 
   ));
-
-
+  
   app.get('/dashboard', isLoggedIn, authController.dashboard);
 
+  
   app.get('/logout', authController.logout);
 
-  app.post('/signin', passport.authenticate('local-signin', {
+  app.post('/signin', passport.authenticate('local-signin'), {
       successRedirect: '/dashboard',
 
       failureRedirect: '/signin'
     }
 
-  ));
+  );
 
 
   function isLoggedIn(req, res, next) {
@@ -40,30 +40,3 @@ module.exports = function(app, passport) {
   }
 
 }
-
-// const jwt = require('express-jwt');
-
-// const getTokenFromHeaders = (req) => {
-//   const { headers: { authorization } } = req;
-
-//   if(authorization && authorization.split(' ')[0] === 'Token') {
-//     return authorization.split(' ')[1];
-//   }
-//   return null;
-// };
-
-// const auth = {
-//   required: jwt({
-//     secret: 'secret',
-//     userProperty: 'payload',
-//     getToken: getTokenFromHeaders,
-//   }),
-//   optional: jwt({
-//     secret: 'secret',
-//     userProperty: 'payload',
-//     getToken: getTokenFromHeaders,
-//     credentialsRequired: false,
-//   }),
-// };
-
-// module.exports = auth;

@@ -1,9 +1,9 @@
-var crypto = require('crypto');
-var mysql = require('mysql');
-var session = require("express-session");
-var MySQLStore = require('express-mysql-session')(session);
-var passport = require('passport')
-  , LocalStrategy = require('passport-local').Strategy;
+// var crypto = require('crypto');
+// var mysql = require('mysql');
+// var session = require("express-session");
+// var MySQLStore = require('express-mysql-session')(session);
+// var passport = require('passport')
+//   , LocalStrategy = require('passport-local').Strategy;
 
 // const express = require('express');
 // const path = require('path');
