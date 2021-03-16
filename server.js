@@ -6,10 +6,12 @@ var session = require('express-session')
 var bodyParser = require('body-parser')
 var env = require('dotenv').config();
 var exphbs = require('express-handlebars');
+var db = require('./app/models/')
 
 // const db = require('./app/models');
 
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 3005;
+// const PORT = process.env.PORT || 8080;
 
 //For BodyParser
 app.use(bodyParser.urlencoded({ 

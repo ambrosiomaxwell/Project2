@@ -1,5 +1,6 @@
 //load bcrypt
 var bCrypt = require('bcrypt-nodejs');
+var passport = require('passport')
  
 module.exports = function(passport, user) {
  
