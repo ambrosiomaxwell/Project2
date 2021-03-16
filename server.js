@@ -35,6 +35,8 @@ app.engine('hbs', exphbs({
 }));
 app.set('view engine', '.hbs'); 
 
+app.engine('handlebars', exphbs({ defaultLayout: 'main'}));
+app.set('view engine', 'handlebars');
 
 app.get('/', function(req, res) {
  
@@ -80,9 +82,6 @@ app.listen(8080, function(err) {
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-
-app.engine('handlebars', exphbs({ defaultLayout: 'main'}));
-app.set('view engine', 'handlebars');
 
 app.use(express.static('public'));
 
