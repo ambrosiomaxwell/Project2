@@ -28,7 +28,20 @@ const PORT = process.env.PORT || 8080;
 
 //Existing express setup
 const db = require('./models');
+//socket io
+const http = require('http');
+const server = http.createServer(app)
+const io = require('socket.io')(server);
+const passportSocketIo = require('passport.socketio')
+cookieParser = require('cookie-parser')
 
+/*io.use(passportSocketIo.authorize({
+    cookieParser: cookieParser,
+    key:          'express.sid',
+    secret:       process.env.SESSION_SECRET,
+    store:        sessionStore
+  }));
+*/
 //Existing express setup
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -41,13 +54,36 @@ app.set('view engine', 'handlebars');
 app.use(express.static(path.join(__dirname, '/public')));
 
 
+const users={};
+
+io.on('connection', (socket)=> {
+    
+    socket.on('send-chat-message', message => {
+        socket.broadcast.emit('chat-message',{message: message, name:users[socket.id]})
+    });
+    socket.on('new-user', name =>{
+        users[socket.id] = name
+        socket.broadcast.emit('user-connected',name)
+    });
+    socket.on('disconnect', () => {
+        socket.broadcast.emit(`user-disconnected`, users[socket.id]);
+        delete users[socket.id];
+    });
+})
+
+
+io.on("chat message", function (data) {
+    io.emit("chat message", data);
+});
+
+
 //Handlebar routes - Existing express setup
 app.get('/javascriptroom',(req,res) => res.render('javascript', {layouts: 'main'}));
 
 
 //new index room - Existing express setup
 
-app.get('/', (req, res) => res.render('index', {layouts: 'main'}));
+app.get('/', (req, res) => res.render('javascript', {layouts: 'main'}));
 
 //New login room - Existing express setup
 app.get('/login', (req, res) => res.render('login', {layouts: 'main'}));
@@ -84,5 +120,5 @@ app.get('/javascript', (req, res) => {
 //Existing express setup
 
 db.sequelize.sync().then(() => {
-    app.listen(PORT, () => console.log(`App listening on PORT ${PORT}`));
+    server.listen(PORT, () => console.log(`App listening on PORT ${PORT}`));
 });

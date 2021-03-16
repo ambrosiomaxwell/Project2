@@ -1,4 +1,38 @@
 <body>
+
+    <div class="modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form class="usernameandpassword" action="https://arcane-scrubland-50171.herokuapp.com/" method="post">
+    <div class="username">
+        <label for="name">Username:</label>
+        <input type="text" name="username" id="name"/>
+    </div>
+    <div class="password">
+        <label="pass">Password:</label>
+        <input type="password" name="password" id="password"/>
+    </div>
+    <div>
+        <input class="loginbutton" type="submit" value="Log In"/>
+    </div>
+    </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
     <div class="jumbotron">
         <h1 class="text-center javascriptheading">Javascript Study Area</h1>
         <hr>
@@ -8,23 +42,35 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-3 col-sm-offset-2 javascriptenternames">
-                <p class="cool-font">Name</p>
+               <!-- <p class="cool-font">Name</p>
                 <input class="form-control" type="name" id="name" placeholder="Enter your name">
                 <br>
                 <p class="cool-font javascriptemail">Email</p>
                 <input class="form-control" type="email" id="emailarea" placeholder="Enter your email">
                 <button id="name-submit" class="btn-btn-lg pull-right">Submit</button>
-                </div>
-            </div>
+                
             
-            <div class="row">
-                <div class="col-sm-3 col-sm-offset-2">
+            -->
                     <h2>Users</h2>
                     <hr>
                     <div id="user-area"></div>
+                    </div>
+                    <div class='col-sm-9'>
+                    <div id='message-area'>
+                        <div id='message-container'>
+                    
+                        </div>
+                        <form id='send-container'>
+                            
+                            <input type='text' id='message-input'>
+                            <button type='submit' id='send-button'>send</button>
+                        </form>
+                        </div>
                 </div>
+            </div>
             </div>
         </div>
     </div>
+    
     
 </body>

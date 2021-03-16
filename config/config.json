@@ -1,21 +1,21 @@
 {
   "development": {
     "username": "root",
-    "password": "",
+    "password": "bigdogjr",
     "database": "music_Selection_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
-    "password": "",
+    "password": "bigdogjr",
     "database": "database_test",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "production": {
     "username": "root",
-    "password": "",
+    "password": "bigdogjr",
     "database": "JAWSDB_URL",
     "host": "127.0.0.1",
     "dialect": "mysql"
