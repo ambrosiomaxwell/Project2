@@ -1,0 +1,19 @@
+{
+  "development": {
+    "username": "root",
+    "password": "",
+    "database": "music_Selection_db",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "qf2kl3dhalptmu35",
+    "password": "nl3waiw8hjpjgt00",
+    "database": "JAWSDB_URL",
+    "host": "eyw6324oty5fsovx.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+    "dialect": "mysql"
+  },
+  "production": {
+    "use_env_variable": "JAWSDB_URL"
+  }
+}
