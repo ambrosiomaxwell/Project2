@@ -2,10 +2,9 @@
 
 /* All body background color -Msnow */
 body{
-  text-align: center;
-  font-size: 20px;
+  margin:0;
+  padding:0;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  background-color: rgb(249, 251, 252);
 }
 
 /* Login form for login page Msnow */
@@ -14,7 +13,21 @@ form {
   display: inline-block;
 }
 
-/* Login Page Msnow */
+.sidecolumn{
+  background-color: rgb(246, 251, 252);
+}
+
+/*study room selection*/
+
+.roomselection{
+  background-color: rgb(238, 237, 237);
+}
+
+.javascriptenternames{
+  background-color: lightsteelblue;
+
+}
+
 
 .loginh2{
   background-color: rgb(217, 228, 243);
@@ -22,6 +35,14 @@ form {
   color: black;
   padding: 20px;
 }
+
+.topborder{
+  border-style:solid
+
+}
+
+
+/* Login Page Msnow */
 
 /* Login Page Msnow */
 
@@ -55,9 +76,7 @@ form {
 
 /* Login other button msnow */
 .otherbutton{
-  margin-top: 20px;
-  width: 200px;
-  background-color: rgb(238, 225, 232);
+  background-color: crimson;
 }
 
 /* Index styling msnow */ 
@@ -83,7 +102,22 @@ form {
 /* Javascript study room msnow */
 
 .javascriptheading{
-  color:rgb(18, 18, 209);
+  color:black;
   padding:20px;
-  background-color: rgb(217, 248, 250);
+}
+
+.usersname{
+  text-align: center;
+  background-color: rgb(246, 251, 252);
+}
+
+.sidecolumn{
+  background-color: rgb(246, 251, 252);
+}
+
+
+/* login page */
+
+.form-group{
+  text-align: center;
 }
